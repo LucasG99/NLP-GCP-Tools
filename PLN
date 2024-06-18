@@ -24,3 +24,58 @@ data = {
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
 print(response.json())
+
+AutoML Natural Language
+Descrição: Permite criar modelos personalizados de NLP treinados com seus próprios dados para tarefas específicas, como classificação de texto, extração de entidades e análise de sentimentos.
+
+Exemplo de Aplicação: Classificação automática de e-mails em categorias predefinidas (e.g., spam, importante, social). 
+
+import requests
+import json
+
+url = "https://automl.googleapis.com/v1/projects/YOUR_PROJECT_ID/locations/us-central1/models/YOUR_MODEL_ID:predict"
+headers = {
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+    "Content-Type": "application/json"
+}
+data = {
+    "payload": {
+        "textSnippet": {
+            "content": "Your meeting is scheduled for tomorrow at 10 AM.",
+            "mimeType": "text/plain"
+        }
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+print(response.json())
+
+Dialogflow
+Descrição: Plataforma para construir interfaces de conversação, como chatbots e agentes virtuais, que podem ser integrados a diversas plataformas (e.g., websites, apps, dispositivos IoT).
+
+Exemplo de Aplicação: Criação de um chatbot para atendimento ao cliente no site de uma empresa.
+
+import requests
+import json
+
+url = "https://dialogflow.googleapis.com/v2/projects/YOUR_PROJECT_ID/agent/sessions/YOUR_SESSION_ID:detectIntent"
+headers = {
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+    "Content-Type": "application/json"
+}
+data = {
+    "queryInput": {
+        "text": {
+            "text": "What are your business hours?",
+            "languageCode": "en"
+        }
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+print(response.json())
+
+}
+Certifique-se de substituir `"YOUR_API_KEY"`, `"YOUR_PROJECT_ID"`, `"YOUR_MODEL_ID"`, `"YOUR_ACCESS_TOKEN"` e `"YOUR_SESSION_ID"` pelos valores apropriados.
+
+Depois de adicionar este conteúdo ao arquivo, faça commit e push para o seu repositório no GitHub. Em seguida, forneça o link do repositório para que eu possa verificar.
